@@ -1,12 +1,14 @@
 # Ticketing Service
+Simple ticket service that facilitates the discovery, temporary hold, and final reservation 
+of seats within a high-demand performance venue.
 
 ## Assumptions:
 1. Multi-event booking support available, but data pre-populated for a single event in db.
 2. H2(db) is pre-populated with minimal data for one event for running integration tests. 
-3. For every new event, a db script will be run to pre-populate db(seat_hold table) with available seats. No separate
-count is maintained for keeping track of total seats.
-4. No payment option implemented.
-5. Service decides which best seat to reserve depending on the availability, no choice given to the user.
+3. For every new event, a db script will be run to pre-populate db(seat_hold table) with 
+available seats. No separate count is maintained for keeping track of total seats.
+4. No payment/purchase flow implemented.
+5. Service decides the best seat to reserve depending on the availability, no choice given to the user.
 6. Customer details are not maintained in the system except for customer email.
 7. No user registration flow implemented.
 8. No User Interface provided.
