@@ -53,10 +53,10 @@ http://localhost:8080/tickets/heartBeat
 	"Code": "200"
 }
 ```
-- GET /tickets/numSeatsAvailable
-(http://localhost:8080/tickets/numSeatsAvailable?level=1)
+-	GET /tickets/numSeatsAvailable
+	- http://localhost:8080/tickets/numSeatsAvailable?level=1
 
-- POST /tickets/findAndHoldSeats
+- 	POST /tickets/findAndHoldSeats
 curl -X POST -H "Content-Type: multipart/form-data; boundary=testRun" "http://localhost:8080/tickets/findAndHoldSeats?numReqSeats=3&minLevel=1&maxLevel=4&customerEmail=test"
 		Response:
 ```
@@ -81,7 +81,7 @@ curl -X POST -H "Content-Type: multipart/form-data; boundary=testRun" "http://lo
    			"holdDone":true
 		}	
 ```
-- POST /tickets/reserveSeats
+-	POST /tickets/reserveSeats
 curl -X POST -H "Content-Type: multipart/form-data; boundary=testRun" "http://localhost:8080/tickets/reserveSeats?seatHoldId=100&customerEmail=test"
 Response:
 ```		
