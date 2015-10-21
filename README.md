@@ -2,10 +2,14 @@
 
 ## Assumptions:
 Multi-event booking support available.
+
 DB(H2) is pre-populated with minimal data for one event for running integration tests. 
+
 For every new event, a db script will be run to pre-populate db(seat_hold table) with available seats. No separate
 count is maintained for keeping track of total seats.
+
 No payment option implemented.
+
 Service decides which best seat to reserve depending on the availability, no choice given to the user.
 Customer details are not maintained in the system except for customer email.
 
@@ -13,7 +17,9 @@ Customer details are not maintained in the system except for customer email.
 
 ## Tech Stack
 Spring Boot
+
 H2(In-memory)
+
 Tomcat(Embedded)
 
 ## Pre-requisites
