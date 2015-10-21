@@ -54,7 +54,7 @@ http://localhost:8080/tickets/heartBeat
 }
 ```
 - GET /tickets/numSeatsAvailable
-http://localhost:8080/tickets/numSeatsAvailable?level=1
+(http://localhost:8080/tickets/numSeatsAvailable?level=1)
 
 - POST /tickets/findAndHoldSeats
 curl -X POST -H "Content-Type: multipart/form-data; boundary=testRun" "http://localhost:8080/tickets/findAndHoldSeats?numReqSeats=3&minLevel=1&maxLevel=4&customerEmail=test"
