@@ -45,13 +45,14 @@ For simplicity/ease of access, all required params are provided as query params.
 Sample Request provided for all APIs.    
 
 - GET /tickets/heartBeat
-   http://localhost:8080/tickets/heartBeat
-		Response:
-		{
-			"heartBeat": "Ok",
-    		"Code": "200"
-		}
-
+http://localhost:8080/tickets/heartBeat
+	Response:
+```
+{
+	"heartBeat": "Ok",
+	"Code": "200"
+}
+```
 - GET /tickets/numSeatsAvailable
    http://localhost:8080/tickets/numSeatsAvailable?level=1
 
