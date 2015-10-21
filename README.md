@@ -44,7 +44,7 @@ Build and run unit/integration tests: mvn clean install
 Reports available in target/site/cobertura/index.html
 
 ### DB Scripts
-DB scripts are available here - 
+DB scripts are available here 
 	src/main/resources/schema.sql - DDLs
 	src/main/resources/data.sql - Test data
 
