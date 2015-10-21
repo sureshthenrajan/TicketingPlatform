@@ -13,7 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import st.ticketplat.application.TicketingPlatformApplication;
+import st.ticketplat.TicketingPlatformApplication;
 import st.ticketplat.domain.Seat;
 import st.ticketplat.domain.SeatHold;
 import st.ticketplat.utils.UtilsTest;
@@ -51,7 +51,7 @@ public class SeatHoldDaoTest {
 		seats = seatHoldDao.numSeatsAvailableInEachLevel
 				(Optional.empty(), Optional.empty());
 		assertNotNull(seats);
-		assertEquals(0,seats.size());
+		assertEquals(12,seats.size());
 
 	}
 

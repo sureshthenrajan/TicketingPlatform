@@ -32,9 +32,11 @@ Reports available in target/site/cobertura/index.html
 
 ### APIs:
 
-Following RESTful APIs provide access to the ticketing service methods 
+Following RESTful APIs provide access to the ticketing service methods.
+For simplicity/ease of access, all required params are provided as query params.
+Sample Request provided for all APIs.    
 
-1. GET /tickets/heartBeat
+	* GET /tickets/heartBeat
 	http://localhost:8080/tickets/heartBeat
 	Response:
 	{
@@ -42,11 +44,37 @@ Following RESTful APIs provide access to the ticketing service methods
     	"Code": "200"
 	}
 
-2. GET /tickets/numSeatsAvailable
-   http://localhost:8080/tickets/numSeatsAvailable?level=1
+	* GET /tickets/numSeatsAvailable
+	http://localhost:8080/tickets/numSeatsAvailable?level=1
 
-3. POST /tickets/findAndHoldSeats
-   curl -X POST -H "Content-Type: multipart/form-data; boundary=testRun" "http://localhost:8080/tickets/findAndHoldSeats?numReqSeats=3&minLevel=1&maxLevel=4&customerEmail=test"
-
-4. POST /tickets/reserveSeats
-   curl -X POST -H "Content-Type: multipart/form-data; boundary=testRun" "http://localhost:8080/tickets/reserveSeats?seatHoldId=100&customerEmail=test"
+	* POST /tickets/findAndHoldSeats
+	Request: curl -X POST -H "Content-Type: multipart/form-data; boundary=testRun" "http://localhost:8080/tickets/findAndHoldSeats?numReqSeats=3&minLevel=1&maxLevel=4&customerEmail=test"
+	Response:
+	{
+   	"seatHoldId":45824118,
+   	"seats":[
+      {
+         "seatId":1,
+         "eventId":1,
+         "eventName":"beethoven",
+         "levelId":1,
+         "price":100.0,
+         "rowNumber":2,
+         "columnNumber":11,
+         "holdId":100,
+         "holdTtl":1445395384695,
+         "reserved":false
+      }
+   	],
+   	"customer_email":"test",
+   	"errorMessage":null,
+   	"holdDone":true
+	}	
+	* POST /tickets/reserveSeats
+	Request:curl -X POST -H "Content-Type: multipart/form-data; boundary=testRun" "http://localhost:8080/tickets/reserveSeats?seatHoldId=100&customerEmail=test"
+	Response:
+	{
+   		"Error":"Reservation unsuccessful:No seats held for this user",
+   		"statusCode":"406",
+   		"reservationCode":""
+	}

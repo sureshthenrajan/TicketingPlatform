@@ -2,6 +2,8 @@ package st.ticketplat.service;
 
 import java.util.Optional;
 
+import org.springframework.stereotype.Component;
+
 import st.ticketplat.domain.SeatHold;
 
 
@@ -12,6 +14,7 @@ import st.ticketplat.domain.SeatHold;
  *
  *
  */
+@Component
 public interface TicketService {
 
 	/**

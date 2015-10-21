@@ -1,4 +1,4 @@
-package st.ticketplat.application;
+package st.ticketplat;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
