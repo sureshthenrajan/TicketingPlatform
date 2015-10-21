@@ -10,13 +10,13 @@ count is maintained for keeping track of total seats.
 6. Customer details are not maintained in the system except for customer email.
 
 ## Tech Stack
-**Spring Boot**
-**H2(In-memory)**
-**Tomcat(Embedded)**
+* Spring Boot
+* H2(In-memory)
+* Tomcat(Embedded)
 
 ## Pre-requisites
-**maven - 3.x**
-**JDK - 1.8**
+* maven - 3.x
+* JDK - 1.8**
 
 ## How to run the application
 
@@ -32,17 +32,21 @@ Reports available in target/site/cobertura/index.html
 
 ### APIs:
 
-	- GET /tickets/heartBeat
-	Sample: http://localhost:8080/tickets/heartBeat
+Following RESTful APIs provide access to the ticketing service methods 
+
+1. GET /tickets/heartBeat
+	http://localhost:8080/tickets/heartBeat
+	Response:
 	{
 		"heartBeat": "Ok",
     	"Code": "200"
 	}
 
-	- GET /tickets/numSeatsAvailable
-	Sample: http://localhost:8080/tickets/numSeatsAvailable?level=1
+2. GET /tickets/numSeatsAvailable
+   http://localhost:8080/tickets/numSeatsAvailable?level=1
 
-	- POST /tickets/findAndHoldSeats
-	Sample: curl -X POST -H "Content-Type: multipart/form-data; boundary=testRun" "http://localhost:8080/tickets/findAndHoldSeats?numReqSeats=3&minLevel=1&maxLevel=4&customerEmail=test"
-	- POST /tickets/reserveSeats
-	Sample: curl -X POST -H "Content-Type: multipart/form-data; boundary=testRun" "http://localhost:8080/tickets/reserveSeats?seatHoldId=100&customerEmail=test"
+3. POST /tickets/findAndHoldSeats
+   curl -X POST -H "Content-Type: multipart/form-data; boundary=testRun" "http://localhost:8080/tickets/findAndHoldSeats?numReqSeats=3&minLevel=1&maxLevel=4&customerEmail=test"
+
+4. POST /tickets/reserveSeats
+   curl -X POST -H "Content-Type: multipart/form-data; boundary=testRun" "http://localhost:8080/tickets/reserveSeats?seatHoldId=100&customerEmail=test"
