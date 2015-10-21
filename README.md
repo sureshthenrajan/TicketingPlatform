@@ -36,6 +36,8 @@ not provided.
 This will start the app in a stand-alone mode. An embedded tomcat and h2 db
 Build and run unit/integration tests: mvn clean install
 
+#### Build and Run tests
+	mvn clean install
 
 ### Code coverage
 	mvn clean cobertura:cobertura
