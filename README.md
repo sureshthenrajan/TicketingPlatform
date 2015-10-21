@@ -44,19 +44,19 @@ Following RESTful APIs provide access to the ticketing service methods.
 For simplicity/ease of access, all required params are provided as query params.
 Sample Request provided for all APIs.    
 
-1. GET /tickets/heartBeat
-		http://localhost:8080/tickets/heartBeat
+- GET /tickets/heartBeat
+   http://localhost:8080/tickets/heartBeat
 		Response:
 		{
 			"heartBeat": "Ok",
     		"Code": "200"
 		}
 
-2. GET /tickets/numSeatsAvailable
-	http://localhost:8080/tickets/numSeatsAvailable?level=1
+- GET /tickets/numSeatsAvailable
+   http://localhost:8080/tickets/numSeatsAvailable?level=1
 
-3. POST /tickets/findAndHoldSeats
-		curl -X POST -H "Content-Type: multipart/form-data; boundary=testRun" "http://localhost:8080/tickets/findAndHoldSeats?numReqSeats=3&minLevel=1&maxLevel=4&customerEmail=test"
+- POST /tickets/findAndHoldSeats
+	curl -X POST -H "Content-Type: multipart/form-data; boundary=testRun" "http://localhost:8080/tickets/findAndHoldSeats?numReqSeats=3&minLevel=1&maxLevel=4&customerEmail=test"
 		Response:
 		{
    			"seatHoldId":45824118,
@@ -78,8 +78,8 @@ Sample Request provided for all APIs.
    			"errorMessage":null,
    			"holdDone":true
 		}	
-4. POST /tickets/reserveSeats
-		Request:curl -X POST -H "Content-Type: multipart/form-data; boundary=testRun" "http://localhost:8080/tickets/reserveSeats?seatHoldId=100&customerEmail=test"
+- POST /tickets/reserveSeats
+	curl -X POST -H "Content-Type: multipart/form-data; boundary=testRun" "http://localhost:8080/tickets/reserveSeats?seatHoldId=100&customerEmail=test"
 		Response:
 		{
    			"statusCode":"200",
